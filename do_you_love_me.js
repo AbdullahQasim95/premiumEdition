@@ -80,4 +80,32 @@ const letter = document.querySelectorAll('.letter');
 
 
 
-     
+    // JavaScript code for handling the "NO" button click
+document.getElementById("noBtn").addEventListener("click", function () {
+  // Hide the "NO" button
+  this.style.display = "none";
+
+  // Change the text and add typing animation
+  const textElement = document.getElementById("displayText");
+  textElement.textContent = "NO, I'M sure YOU REMEMBER";
+  textElement.style.animation = "typing 3s steps(30) forwards";
+});
+
+
+// JavaScript code
+document.getElementById("yesBtn").addEventListener("click", function () {
+  // Add fade-out animation to the sevayContainer
+  const sevayContainer = document.querySelector(".sevayContainer");
+  sevayContainer.classList.add("fade-out");
+
+  // After animation ends, hide sevayContainer and display question-container
+  sevayContainer.addEventListener("animationend", function () {
+    sevayContainer.style.display = "none";
+    document.querySelector(".question-container").style.display = "block";
+  });
+});
+
+
+
+
+    
